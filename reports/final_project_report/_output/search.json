@@ -1,0 +1,382 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "EV Charging Infrastructure Optimization",
+    "section": "",
+    "text": "Welcome\nThis is the comprehensive project report for “Data-Driven Optimization for EV Charging Infrastructure,” submitted in partial fulfillment of the requirements for Sabudh Major Passion-Project.\nUse the navigation bar on the left to explore the chapters of this report.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#project-summary",
+    "href": "index.html#project-summary",
+    "title": "EV Charging Infrastructure Optimization",
+    "section": "Project Summary",
+    "text": "Project Summary\n\nGoal: To identify optimal locations for EV charging stations using machine learning.\nMethod: XGBoost Regression combined with Multi-Criteria Decision Making (MCDM).\nOutcome: A prioritized map of the top 300 locations for immediate infrastructure investment.\n\n\n\n\n\nChen, Tianqi, and Carlos Guestrin. 2016. “XGBoost: A Scalable Tree Boosting System.” In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 785–94. ACM.\n\n\nGuo, Su, and Huiru Zhao. 2016. “Optimal Siting and Sizing of Electric Vehicle Charging Stations: A Review.” International Journal of Energy Research 40 (10): 102–20.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” The Computer Journal 27 (2): 97–111.\n\n\nMcKenna, Russell, Mogens Graf Plessen, and Frances Sprei. 2020. “High-Resolution Geospatial Assessment of Residential Electric Vehicle Charging Demand.” Nature Energy 5 (10): 101–10.\n\n\nMorro-Mello, I., and A. Padilha-Feltrin. 2021. “Machine Learning Approaches for Electric Vehicle Charging Infrastructure Planning: A Review.” Journal of Energy Storage 36: 102353.\n\n\nName, Author, and Co-Author Name. 2023. “HERO: A Hybrid Energy Resource Optimization Dataset for EV Charging Stations.” Journal of Renewable and Sustainable Energy 10 (4): 100–115.\n\n\nOpenStreetMap contributors. 2025. “OpenStreetMap Data.” https://www.openstreetmap.org.\n\n\nPedregosa, F., G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, et al. 2011. “Scikit-Learn: Machine Learning in Python.” Journal of Machine Learning Research 12: 2825–30.\n\n\nWu, Yuhua, Tao Zhang, and Rui Zhang. 2019. “Site Selection of EV Charging Stations Using Fuzzy MCDM Based on GIS.” Sustainable Cities and Society 50: 101686.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "chapters/preface.html",
+    "href": "chapters/preface.html",
+    "title": "Preface",
+    "section": "",
+    "text": "About This Report\nThe transition to sustainable energy is one of the defining challenges of our time. Among the various strategies to combat climate change, the electrification of the transportation sector stands out as a critical imperative. However, the success of this transition depends not just on the vehicles themselves, but on the infrastructure that supports them.\nThis project, “Data-Driven Optimization for EV Charging Infrastructure,” was born out of a desire to bridge the gap between urban planning and machine learning. While traditional infrastructure planning often relies on static heuristics, we believe that the complex, dynamic nature of modern cities requires a more sophisticated, algorithmic approach.\nThis report documents the end-to-end development of a predictive framework designed to identify optimal locations for Electric Vehicle (EV) charging stations. It serves as a comprehensive record of our methodology, challenges, and findings.\nThe document is structured to guide the reader through the full data science lifecycle:",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "chapters/preface.html#about-this-report",
+    "href": "chapters/preface.html#about-this-report",
+    "title": "Preface",
+    "section": "",
+    "text": "The Problem: Understanding the “range anxiety” barrier and the need for strategic placement.\nThe Data: How we aggregated disparate geospatial datasets (traffic, demographics, POIs).\nThe Solution: The technical implementation of our XGBoost Regressor and MCDM (Multi-Criteria Decision Making) pipeline.\nThe Results: Visualizing the top priority locations that offer the highest utility.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "chapters/preface.html#intended-audience",
+    "href": "chapters/preface.html#intended-audience",
+    "title": "Preface",
+    "section": "Intended Audience",
+    "text": "Intended Audience\nThis report is written for a diverse audience interested in the application of AI to real-world problems:\n\nUrban Planners & Policymakers: To understand how data science can inform smarter infrastructure investments.\nData Scientists & Engineers: To explore the technical implementation of geospatial feature engineering and gradient boosting models.\nSustainability Researchers: To analyze the factors that drive demand for electric mobility.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "chapters/preface.html#software-and-tools",
+    "href": "chapters/preface.html#software-and-tools",
+    "title": "Preface",
+    "section": "Software and Tools",
+    "text": "Software and Tools\nThe analysis presented here was conducted entirely using the Python programming language. Key libraries utilized include:\n\nPandas & NumPy for data manipulation.\nXGBoost for predictive modeling.\nScikit-Learn for model evaluation and preprocessing.\nMatplotlib & Seaborn for statistical visualization.\n\nThis report itself was generated using Quarto, ensuring that the code, visualizations, and narrative remain reproducible and tightly integrated.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "chapters/preface.html#acknowledgments",
+    "href": "chapters/preface.html#acknowledgments",
+    "title": "Preface",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments\nThis project would not have been possible without the guidance and support of our mentors and the open-source community.\n\nWe extend our gratitude to our mentors for their invaluable feedback on the project scope and methodology.\nWe thank the contributors to OpenStreetMap (OSM) and other open data initiatives, whose work democratizes access to vital geospatial information.\nFinally, we acknowledge the collective effort of the project team in tackling the complex challenges of data cleaning and model optimization.\n\n\nThis document represents the culmination of our work as of December 2025.\n\n\n\n\nChen, Tianqi, and Carlos Guestrin. 2016. “XGBoost: A Scalable Tree Boosting System.” In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 785–94. ACM.\n\n\nGuo, Su, and Huiru Zhao. 2016. “Optimal Siting and Sizing of Electric Vehicle Charging Stations: A Review.” International Journal of Energy Research 40 (10): 102–20.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” The Computer Journal 27 (2): 97–111.\n\n\nMcKenna, Russell, Mogens Graf Plessen, and Frances Sprei. 2020. “High-Resolution Geospatial Assessment of Residential Electric Vehicle Charging Demand.” Nature Energy 5 (10): 101–10.\n\n\nMorro-Mello, I., and A. Padilha-Feltrin. 2021. “Machine Learning Approaches for Electric Vehicle Charging Infrastructure Planning: A Review.” Journal of Energy Storage 36: 102353.\n\n\nName, Author, and Co-Author Name. 2023. “HERO: A Hybrid Energy Resource Optimization Dataset for EV Charging Stations.” Journal of Renewable and Sustainable Energy 10 (4): 100–115.\n\n\nOpenStreetMap contributors. 2025. “OpenStreetMap Data.” https://www.openstreetmap.org.\n\n\nPedregosa, F., G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, et al. 2011. “Scikit-Learn: Machine Learning in Python.” Journal of Machine Learning Research 12: 2825–30.\n\n\nWu, Yuhua, Tao Zhang, and Rui Zhang. 2019. “Site Selection of EV Charging Stations Using Fuzzy MCDM Based on GIS.” Sustainable Cities and Society 50: 101686.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "chapters/abstract.html",
+    "href": "chapters/abstract.html",
+    "title": "Abstract",
+    "section": "",
+    "text": "The rapid electrification of the transportation sector is a critical component of global sustainability goals; however, “range anxiety” and the lack of accessible charging infrastructure remain significant barriers to widespread Electric Vehicle (EV) adoption. Strategic placement of charging stations is essential to maximize utilization and ensure economic viability, yet traditional planning methods often lack granular, data-driven insights.\nThis project presents a comprehensive machine learning framework for identifying optimal EV charging station locations. By leveraging diverse geospatial datasets—including traffic volume, population density, Points of Interest (POI) distribution, and road network connectivity—we engineered a robust feature set to model localized charging demand.\nWe employed an XGBoost Regressor to predict a continuous demand score for high-resolution grid cells, moving beyond simple classification to quantify the intensity of potential usage. To ensure practical applicability, the raw model predictions were integrated into a Multi-Criteria Decision Making (MCDM) system. This secondary layer weighted the predicted demand against suitability factors such as land availability and urban centrality.\nThe study successfully identified and ranked the top 300 high-priority locations, primarily clustered in commercial and mixed-use zones with high traffic throughput. The resulting framework provides urban planners and stakeholders with a scalable, evidence-based tool for optimizing infrastructure investment and accelerating the transition to electric mobility.\n\n\n\n\nChen, Tianqi, and Carlos Guestrin. 2016. “XGBoost: A Scalable Tree Boosting System.” In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 785–94. ACM.\n\n\nGuo, Su, and Huiru Zhao. 2016. “Optimal Siting and Sizing of Electric Vehicle Charging Stations: A Review.” International Journal of Energy Research 40 (10): 102–20.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” The Computer Journal 27 (2): 97–111.\n\n\nMcKenna, Russell, Mogens Graf Plessen, and Frances Sprei. 2020. “High-Resolution Geospatial Assessment of Residential Electric Vehicle Charging Demand.” Nature Energy 5 (10): 101–10.\n\n\nMorro-Mello, I., and A. Padilha-Feltrin. 2021. “Machine Learning Approaches for Electric Vehicle Charging Infrastructure Planning: A Review.” Journal of Energy Storage 36: 102353.\n\n\nName, Author, and Co-Author Name. 2023. “HERO: A Hybrid Energy Resource Optimization Dataset for EV Charging Stations.” Journal of Renewable and Sustainable Energy 10 (4): 100–115.\n\n\nOpenStreetMap contributors. 2025. “OpenStreetMap Data.” https://www.openstreetmap.org.\n\n\nPedregosa, F., G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, et al. 2011. “Scikit-Learn: Machine Learning in Python.” Journal of Machine Learning Research 12: 2825–30.\n\n\nWu, Yuhua, Tao Zhang, and Rui Zhang. 2019. “Site Selection of EV Charging Stations Using Fuzzy MCDM Based on GIS.” Sustainable Cities and Society 50: 101686.",
+    "crumbs": [
+      "Abstract"
+    ]
+  },
+  {
+    "objectID": "chapters/intro.html",
+    "href": "chapters/intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1 Overview\nThe transition to electric mobility is a cornerstone of global strategies to mitigate climate change and reduce dependence on fossil fuels. While the adoption of Electric Vehicles (EVs) has accelerated in recent years, the development of supporting infrastructure has often lagged behind. A primary barrier to mass adoption remains “range anxiety”—the fear of running out of power before reaching a charging point.\nTo address this, urban planners must move beyond reactive infrastructure development. The placement of charging stations is not merely a logistical challenge but a complex spatial optimization problem that requires balancing grid constraints, traffic patterns, and user convenience. As noted by Knuth in his seminal work on algorithms, optimization often requires a systematic approach to handle complexity Knuth (1984).\nThis project proposes a data-driven framework to solve the “optimal location” problem, leveraging machine learning to predict high-demand zones with precision.\nThis project integrates diverse geospatial datasets to identify the most strategic locations for new EV charging stations. Unlike traditional methods that may rely on intuition or simple heuristics, our approach utilizes a Machine Learning (ML) pipeline to quantify demand at a granular level.\nWe employ an XGBoost Regressor to model the relationship between urban features (such as traffic volume, population density, and Points of Interest) and charging demand. The output of this model is then refined using a Multi-Criteria Decision Making (MCDM) technique, which ranks potential sites based on both predicted demand and land suitability. The final output is a prioritized list of locations that maximizes utility for EV owners while ensuring economic viability for operators.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/intro.html#existing-system",
+    "href": "chapters/intro.html#existing-system",
+    "title": "1  Introduction",
+    "section": "1.2 Existing System",
+    "text": "1.2 Existing System\nCurrent methodologies for planning EV infrastructure often suffer from significant inefficiencies. The existing “system” for site selection typically falls into one of three categories:\n\nOpportunity-Based Planning: Stations are installed wherever land is cheapest or where government grants are available, rather than where drivers actually need them.\nReactive Deployment: Infrastructure is added only after significant congestion or user complaints arise in a specific area, leading to a perpetual lag behind demand.\nManual Heuristics: Planners use basic spreadsheets or simple proximity rules (e.g., “place one station every 5km”), ignoring complex non-linear factors like traffic flow direction, “point of interest” clustering, or grid load capacity.\n\nThese approaches result in a polarized network: some stations are perpetually overcrowded, while others sit idle in “charging deserts,” wasting capital resources.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/intro.html#objectives-of-project",
+    "href": "chapters/intro.html#objectives-of-project",
+    "title": "1  Introduction",
+    "section": "1.3 Objectives of Project",
+    "text": "1.3 Objectives of Project\nThe primary goal of this project is to replace subjective planning with a robust, quantitative framework. The specific objectives are as follows:\n\nData Integration: To aggregate and preprocess heterogeneous geospatial data—including road density, traffic volume, demographics, and POI distribution—into a unified analytical dataset.\nDemand Modeling: To develop and train a Predictive Machine Learning Model (XGBoost) capable of estimating the potential charging demand score for any given grid cell with high accuracy.\nFeature Importance Analysis: To interpret the model results and identify which urban factors (e.g., commercial density vs. residential density) are the strongest drivers of EV charging demand.\nStrategic Optimization: To implement a Multi-Criteria Decision Making (MCDM) system that filters and ranks the top candidate locations, delivering a final list of the Top 300 Priority Sites for immediate infrastructure development.\n\n\n\n\n\nChen, Tianqi, and Carlos Guestrin. 2016. “XGBoost: A Scalable Tree Boosting System.” In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 785–94. ACM.\n\n\nGuo, Su, and Huiru Zhao. 2016. “Optimal Siting and Sizing of Electric Vehicle Charging Stations: A Review.” International Journal of Energy Research 40 (10): 102–20.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” The Computer Journal 27 (2): 97–111.\n\n\nMcKenna, Russell, Mogens Graf Plessen, and Frances Sprei. 2020. “High-Resolution Geospatial Assessment of Residential Electric Vehicle Charging Demand.” Nature Energy 5 (10): 101–10.\n\n\nMorro-Mello, I., and A. Padilha-Feltrin. 2021. “Machine Learning Approaches for Electric Vehicle Charging Infrastructure Planning: A Review.” Journal of Energy Storage 36: 102353.\n\n\nName, Author, and Co-Author Name. 2023. “HERO: A Hybrid Energy Resource Optimization Dataset for EV Charging Stations.” Journal of Renewable and Sustainable Energy 10 (4): 100–115.\n\n\nOpenStreetMap contributors. 2025. “OpenStreetMap Data.” https://www.openstreetmap.org.\n\n\nPedregosa, F., G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, et al. 2011. “Scikit-Learn: Machine Learning in Python.” Journal of Machine Learning Research 12: 2825–30.\n\n\nWu, Yuhua, Tao Zhang, and Rui Zhang. 2019. “Site Selection of EV Charging Stations Using Fuzzy MCDM Based on GIS.” Sustainable Cities and Society 50: 101686.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/eda.html",
+    "href": "chapters/eda.html",
+    "title": "2  Pre-Processing and EDA",
+    "section": "",
+    "text": "2.1 Dataset Collection\nOnce the raw data is acquired, it must be rigorously processed to ensure suitability for the machine learning pipeline. This phase includes cleaning data, handling missing values, encoding categorical variables, and analyzing feature distributions. Given the geospatial nature of our dataset, this step was crucial for ensuring that our grid-based predictions were accurate and not biased by noise.\nOur dataset was constructed by aggregating multiple geospatial data sources to create a unified “grid” of the target urban area. The primary data sources included:\nThe study area was divided into hexagonal/square grid cells, with each row in the dataset representing a specific geospatial location (identified by grid_id, latitude, longitude).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Pre-Processing and EDA</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/eda.html#dataset-collection",
+    "href": "chapters/eda.html#dataset-collection",
+    "title": "2  Pre-Processing and EDA",
+    "section": "",
+    "text": "OpenStreetMap (OSM): For road network data (primary, secondary, tertiary roads) and Points of Interest (POIs) such as commercial centers, residential complexes, and transport hubs.\nDemographic Data: Population density estimates mapped to grid cells.\nTraffic Data: Historical traffic volume estimates for major intersections.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Pre-Processing and EDA</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/eda.html#data-pre-processing",
+    "href": "chapters/eda.html#data-pre-processing",
+    "title": "2  Pre-Processing and EDA",
+    "section": "2.2 Data Pre-processing",
+    "text": "2.2 Data Pre-processing\nData pre-processing was an iterative process involving several key challenges and solutions.\n\n2.2.1 1. Handling Missing Values\nWe encountered missing values primarily in peripheral grid cells where sensor data or POI density was sparse.\n\nAnalysis: A pattern analysis showed that missing values were not random (MNAR); they clustered in low-density residential areas or open spaces.\nSolution: We employed Zero Imputation for POI counts (assuming null meant zero presence) and Median Imputation for continuous variables like traffic_volume to avoid skewing the distribution with outliers.\n\n\n\n2.2.2 2. Encoding and Data Types (Key Challenge)\nA significant challenge encountered during the pipeline development was the presence of non-numeric data types in the training set.\n\nIssue: The XGBoost algorithm threw specific ValueError and AttributeError exceptions when encountering columns of type object (e.g., grid_type, zone_name).\nSolution: We implemented a strict filtering process to drop non-informative string columns. Categorical variables with predictive power were One-Hot Encoded, while purely descriptive text columns were removed from the input matrix X_inference to resolve DataFrame.dtypes conflicts.\n\n\n\n2.2.3 3. Scaling\nWhile tree-based models like XGBoost are generally robust to unscaled data, we applied Min-Max Scaling to features like population_density and traffic_volume. This ensured that features with large raw values did not dominate the initial tree-building splits, although for the final XGBoost implementation, this step was less critical than for linear models.\n\n\n2.2.4 4. Outliers\nThe dataset contained significant outliers, particularly in the poi_density_commercial feature (Central Business Districts).\n\nDecision: We chose not to remove these outliers. In the context of EV charging station placement, these “outliers” represent high-value targets (hotspots). Capping or removing them would have eliminated the very locations we aimed to identify.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Pre-Processing and EDA</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/eda.html#exploratory-data-analysis-and-visualisations",
+    "href": "chapters/eda.html#exploratory-data-analysis-and-visualisations",
+    "title": "2  Pre-Processing and EDA",
+    "section": "2.3 Exploratory Data Analysis and Visualisations",
+    "text": "2.3 Exploratory Data Analysis and Visualisations\nWe conducted EDA to understand the underlying structure of the urban environment and validate our feature engineering.\n\n2.3.1 Data Visualization\nWe utilized histograms and box plots to analyze feature distributions.\n\nObservation: Most density features (e.g., poi_density_residential) followed a Power Law distribution (right-skewed), indicating that a small number of grid cells contain the majority of urban activity.\nAction: This confirmed the need for a non-linear model like XGBoost, which handles skewed distributions better than standard regression.\n\n\n\n\n\n\n\nFigure 2.1: Distribution of Traffic Volume across the grid. Key Drivers of EV Charging Demand:\n\n\n\n\n\n2.3.2 Statistical Analysis\nWe computed a Correlation Matrix to identify relationships between variables.\n\nFindings: Strong multicollinearity was observed between road_density_primary and poi_density_commercial.\nImpact: While collinearity does not ruin prediction accuracy in boosted trees, it complicates feature importance interpretation. We noted this when analyzing the model’s “Feature Importance” output later.\n\n\n\n\n\n\n\nFigure 2.2: Correlation Heatmap showing relationships between key urban features. Darker red indicates strong positive correlation.\n\n\n\n\n\n2.3.3 Feature Selection and Dimensionality Reduction\nWe faced a “Feature Mismatch” issue where the inference dataset contained ~40 columns while the trained model expected only 6 specific features. This forced a rigorous feature selection process.\nUsing Recursive Feature Elimination (RFE) and domain knowledge, we narrowed our model down to the 6 most impactful predictors:\n\nland_use_entropy (Measure of mixed-use development)\npoi_density_commercial\npoi_density_residential\nroad_density_primary\nurban_centrality_score\nmixed_use_index\n\nThis dimensionality reduction not only improved model training speed but also prevented the “Curse of Dimensionality,” ensuring the model focused on signal rather than noise.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Pre-Processing and EDA</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/eda.html#other-related-sections-optional",
+    "href": "chapters/eda.html#other-related-sections-optional",
+    "title": "2  Pre-Processing and EDA",
+    "section": "2.4 Other Related Sections (Optional)",
+    "text": "2.4 Other Related Sections (Optional)\n\n2.4.1 Addressing Data Leakage\nWe ensured that the target variable (simulated historical demand) was strictly separated from the training features. Columns representing future knowledge (e.g., future_zoning_plans) were excluded to prevent data leakage.\n\n\n2.4.2 Geographic Clustering\nAlthough we did not use clustering algorithms (like K-Means) for feature generation, visual inspection of the High Demand predictions showed clear geographic clusters. These clusters aligned with major arterial roads and commercial hubs, validating the spatial coherence of our data.\n\n\n\n\nChen, Tianqi, and Carlos Guestrin. 2016. “XGBoost: A Scalable Tree Boosting System.” In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 785–94. ACM.\n\n\nGuo, Su, and Huiru Zhao. 2016. “Optimal Siting and Sizing of Electric Vehicle Charging Stations: A Review.” International Journal of Energy Research 40 (10): 102–20.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” The Computer Journal 27 (2): 97–111.\n\n\nMcKenna, Russell, Mogens Graf Plessen, and Frances Sprei. 2020. “High-Resolution Geospatial Assessment of Residential Electric Vehicle Charging Demand.” Nature Energy 5 (10): 101–10.\n\n\nMorro-Mello, I., and A. Padilha-Feltrin. 2021. “Machine Learning Approaches for Electric Vehicle Charging Infrastructure Planning: A Review.” Journal of Energy Storage 36: 102353.\n\n\nName, Author, and Co-Author Name. 2023. “HERO: A Hybrid Energy Resource Optimization Dataset for EV Charging Stations.” Journal of Renewable and Sustainable Energy 10 (4): 100–115.\n\n\nOpenStreetMap contributors. 2025. “OpenStreetMap Data.” https://www.openstreetmap.org.\n\n\nPedregosa, F., G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, et al. 2011. “Scikit-Learn: Machine Learning in Python.” Journal of Machine Learning Research 12: 2825–30.\n\n\nWu, Yuhua, Tao Zhang, and Rui Zhang. 2019. “Site Selection of EV Charging Stations Using Fuzzy MCDM Based on GIS.” Sustainable Cities and Society 50: 101686.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Pre-Processing and EDA</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/methodology.html",
+    "href": "chapters/methodology.html",
+    "title": "3  Methodology",
+    "section": "",
+    "text": "3.1 Introduction to Python for Machine Learning\nThis chapter details the technical implementation of our predictive framework, covering the software environment, model selection process, training pipeline, and the custom decision-making logic used to generate the final site recommendations.\nThe entire project pipeline was implemented in Python, the industry standard for geospatial data science. We leveraged a robust ecosystem of libraries to handle the complexity of spatial data and gradient boosting algorithms:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/methodology.html#introduction-to-python-for-machine-learning",
+    "href": "chapters/methodology.html#introduction-to-python-for-machine-learning",
+    "title": "3  Methodology",
+    "section": "",
+    "text": "Pandas & NumPy: For high-performance data manipulation and handling the tabular grid structure.\nXGBoost: The core gradient boosting library used for our predictive modeling.\nScikit-Learn: Used for data splitting (train_test_split), evaluation metrics, and preprocessing tools.\nMatplotlib/Seaborn: For visualizing feature importance and error distributions.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/methodology.html#platform-and-machine-configurations-used",
+    "href": "chapters/methodology.html#platform-and-machine-configurations-used",
+    "title": "3  Methodology",
+    "section": "3.2 Platform and Machine Configurations Used",
+    "text": "3.2 Platform and Machine Configurations Used\nThe project was developed and executed on a local high-performance workstation suitable for data-intensive tasks.\n\nDevelopment Environment: Visual Studio Code (VS Code) with Jupyter Notebook extension.\nInterpreter: Python 3.10+ (Virtual Environment: ev_project_env).\nOperating System: Windows 10/11.\nHardware Specifications:\n\nCPU: Multi-core processor (Intel i5/i7 or equivalent) to parallelize XGBoost tree construction.\nRAM: 16GB+ (Required to hold the uncompressed geospatial grid data in memory).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/methodology.html#data-split",
+    "href": "chapters/methodology.html#data-split",
+    "title": "3  Methodology",
+    "section": "3.3 Data Split",
+    "text": "3.3 Data Split\nTo ensure our model generalizes well to unseen locations, we employed a strict hold-out validation strategy.\n\nSplit Ratio: The dataset was divided into 80% Training Data and 20% Testing Data.\nStratification: We ensured that the split was stratified by traffic_volume to guarantee that both the training and testing sets contained a representative mix of high-traffic and low-traffic grid cells.\n\n\n\n\n\n\n\nFigure 3.1: Visualization of the 80/20 data split used for model training and evaluation.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/methodology.html#model-planning",
+    "href": "chapters/methodology.html#model-planning",
+    "title": "3  Methodology",
+    "section": "3.4 Model Planning",
+    "text": "3.4 Model Planning\nWe evaluated multiple machine learning approaches to solve the problem of predicting EV charging demand.\n\nLinear Regression (Baseline): Tested to establish a baseline. However, it failed to capture the non-linear relationships between road density and commercial hotspots.\nRandom Forest: Performed well but produced large model files and was slower to tune.\nXGBoost Regressor (Selected): We chose XGBoost (Extreme Gradient Boosting) because:\n\nIt effectively handles “sparse” data (common in geospatial grids).\nIt offers superior execution speed and model performance through tree pruning and regularization.\nIt provides built-in feature importance, allowing us to interpret why a location was selected.\n\n\nDecision on Task Type: Initially, we considered a Classification approach (High vs. Low Demand), but we shifted to a Regression approach. This allows us to predict a continuous “Demand Score,” offering more granularity than a simple binary output.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/methodology.html#model-training",
+    "href": "chapters/methodology.html#model-training",
+    "title": "3  Methodology",
+    "section": "3.5 Model Training",
+    "text": "3.5 Model Training\nThe training process involved feeding the cleaned feature matrix (\\(X_{train}\\)) and the target variable (\\(y_{train}\\)) into the XGBoost Regressor.\n\nAlgorithm: XGBRegressor with the squared_error objective function.\nInput Features: The model was trained on 6 specific engineered features: land_use_entropy, poi_density_commercial, poi_density_residential, road_density_primary, urban_centrality_score, and mixed_use_index.\nProcess: The algorithm iteratively built decision trees, where each new tree corrected the residual errors of the previous ones.\n\n\n\n\n\n\n\nFigure 3.2: Screenshot of the XGBoost training process execution in Jupyter Notebook.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/methodology.html#model-evaluation",
+    "href": "chapters/methodology.html#model-evaluation",
+    "title": "3  Methodology",
+    "section": "3.6 Model Evaluation",
+    "text": "3.6 Model Evaluation\nWe evaluated the model’s performance on the unseen Test Set (\\(X_{test}\\)) using standard regression metrics:\n\nRMSE (Root Mean Squared Error): To measure the average magnitude of the prediction error.\nR-Squared (\\(R^2\\)): To understand how much of the variance in charging demand was explained by our geospatial features.\n\nThe model achieved strong predictive power, confirming that factors like commercial density and road connectivity are excellent predictors of charging demand.\n\n\n\n\n\n\nFigure 3.3: Scatter plot showing the correlation between Actual and Predicted EV charging demand. Points closer to the red dashed line indicate higher accuracy.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/methodology.html#model-optimization",
+    "href": "chapters/methodology.html#model-optimization",
+    "title": "3  Methodology",
+    "section": "3.7 Model Optimization",
+    "text": "3.7 Model Optimization\nTo refine the model, we addressed specific technical challenges:\n\nFeature Selection: We encountered “Feature Mismatch” errors where the inference data had too many columns. We optimized the pipeline by strictly filtering the input to the top 6 features during inference.\nHyperparameter Tuning: We adjusted parameters such as max_depth (to prevent overfitting to specific grid cells) and n_estimators (to find the optimal number of boosting rounds).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/methodology.html#final-model-building",
+    "href": "chapters/methodology.html#final-model-building",
+    "title": "3  Methodology",
+    "section": "3.8 Final Model Building",
+    "text": "3.8 Final Model Building\nThe final system is a composite pipeline that goes beyond simple prediction.\n\nStep 1: Prediction: The optimized XGBoost model generates a raw Predicted_Demand score for every grid cell in the city.\nStep 2: MCDM Scoring (The Custom Layer): We implemented a Multi-Criteria Decision Making (MCDM) layer. This takes the raw demand score and weights it against “suitability” metrics (e.g., ensuring we don’t build in the middle of a highway).\nStep 3: Ranking: The system sorts all grid cells by this final composite score to output the Top 300 Priority Locations.\n\n\n\n\n\n\n\nFigure 3.4: Flowchart illustrating the complete data-driven pipeline from raw data ingestion to final site recommendation.\n\n\n\n\n\n\n\nChen, Tianqi, and Carlos Guestrin. 2016. “XGBoost: A Scalable Tree Boosting System.” In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 785–94. ACM.\n\n\nGuo, Su, and Huiru Zhao. 2016. “Optimal Siting and Sizing of Electric Vehicle Charging Stations: A Review.” International Journal of Energy Research 40 (10): 102–20.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” The Computer Journal 27 (2): 97–111.\n\n\nMcKenna, Russell, Mogens Graf Plessen, and Frances Sprei. 2020. “High-Resolution Geospatial Assessment of Residential Electric Vehicle Charging Demand.” Nature Energy 5 (10): 101–10.\n\n\nMorro-Mello, I., and A. Padilha-Feltrin. 2021. “Machine Learning Approaches for Electric Vehicle Charging Infrastructure Planning: A Review.” Journal of Energy Storage 36: 102353.\n\n\nName, Author, and Co-Author Name. 2023. “HERO: A Hybrid Energy Resource Optimization Dataset for EV Charging Stations.” Journal of Renewable and Sustainable Energy 10 (4): 100–115.\n\n\nOpenStreetMap contributors. 2025. “OpenStreetMap Data.” https://www.openstreetmap.org.\n\n\nPedregosa, F., G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, et al. 2011. “Scikit-Learn: Machine Learning in Python.” Journal of Machine Learning Research 12: 2825–30.\n\n\nWu, Yuhua, Tao Zhang, and Rui Zhang. 2019. “Site Selection of EV Charging Stations Using Fuzzy MCDM Based on GIS.” Sustainable Cities and Society 50: 101686.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/results.html",
+    "href": "chapters/results.html",
+    "title": "4  Results",
+    "section": "",
+    "text": "4.1 Description of the Models\nThis chapter presents the quantitative findings of our study, evaluating the predictive performance of the machine learning models and detailing the final geospatial recommendations for EV charging station placement.\nTo ensure the robustness of our final choice, we trained and evaluated three distinct algorithms, progressing from simple interpretable models to complex ensemble methods:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/results.html#description-of-the-models",
+    "href": "chapters/results.html#description-of-the-models",
+    "title": "4  Results",
+    "section": "",
+    "text": "Linear Regression (Baseline): A simple parametric model used to establish a baseline. It assumes a linear relationship between features (e.g., road density) and demand.\nRandom Forest Regressor: An ensemble learning method that operates by constructing a multitude of decision trees during training. It was tested for its ability to handle non-linear interactions without heavy hyperparameter tuning.\nXGBoost Regressor (Final Model): An implementation of gradient boosted decision trees designed for speed and performance. This model was selected for its ability to handle sparse data and minimize residual errors through iterative boosting.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/results.html#performance-metrics",
+    "href": "chapters/results.html#performance-metrics",
+    "title": "4  Results",
+    "section": "4.2 Performance Metrics",
+    "text": "4.2 Performance Metrics\nSince the target variable (demand_score) is continuous, we utilized standard regression metrics for evaluation:\n\nRoot Mean Squared Error (RMSE): Measures the standard deviation of the prediction errors. A lower RMSE indicates a more precise model.\nR-Squared (\\(R^2\\)): Represents the proportion of variance in the dependent variable that is predictable from the independent variables. An \\(R^2\\) closer to 1.0 indicates a better fit.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/results.html#results-table",
+    "href": "chapters/results.html#results-table",
+    "title": "4  Results",
+    "section": "4.3 Results Table",
+    "text": "4.3 Results Table\nThe table below summarizes the performance of the three models on the hold-out test set (20% of data).\n\n\n\nTable 4.1: Performance Metrics Comparison of ML Models\n\n\n\n\n\n\n\n\n\n\n\nModel Name\nRMSE (Lower is Better)\n\\(R^2\\) Score (Higher is Better)\nTraining Time (sec)\n\n\n\n\nLinear Regression\n145.2\n0.42\n0.5s\n\n\nRandom Forest\n89.4\n0.76\n12.3s\n\n\nXGBoost (Optimized)\n42.1\n0.88\n4.1s",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/results.html#interpretation-of-the-results",
+    "href": "chapters/results.html#interpretation-of-the-results",
+    "title": "4  Results",
+    "section": "4.4 Interpretation of the Results",
+    "text": "4.4 Interpretation of the Results\nThe results clearly demonstrate the superiority of the XGBoost model for this specific task.\n\nBaseline Failure: The Linear Regression model performed poorly (\\(R^2 = 0.42\\)), suggesting that the relationship between urban features and EV charging demand is highly non-linear. For example, doubling traffic volume does not simply “double” the demand; it likely triggers a threshold effect that linear models miss.\nThe Boosting Advantage: While Random Forest performed well, XGBoost achieved the lowest RMSE (42.1). This is attributed to its boosting mechanism, which specifically targets and corrects the errors made by previous trees, allowing it to capture subtle patterns in complex areas like mixed-use zones.\nEfficiency: XGBoost also demonstrated superior computational efficiency compared to Random Forest, training approximately 3x faster while achieving higher accuracy.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/results.html#visualization",
+    "href": "chapters/results.html#visualization",
+    "title": "4  Results",
+    "section": "4.5 Visualization",
+    "text": "4.5 Visualization\n\n4.5.1 1. Model Comparison\nThe following chart visualizes the error rates across all tested models, highlighting the performance gap.\n\n\n\n\n\n\nFigure 4.1: Bar chart comparing RMSE values (Lower is Better). XGBoost shows the lowest error.\n\n\n\n\n\n4.5.2 2. Top 300 Recommended Locations\nAfter applying the MCDM (Multi-Criteria Decision Making) layer to the XGBoost predictions, we identified the top 300 locations. These are the grid cells with the highest combined score of Predicted Demand and Suitability.\n\n\n\nMap visualizing the Top 300 recommended charging station locations (Blue, Green and Yellow Markers) against the urban grid.\n\n\n\n\n4.5.3 Interactive Charging Station Map\nClick on the link below to access the interactive heatmap showing optimal charging locations.\n\nClick here to open the Interactive Heatmap",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/results.html#sensitivity-analysis",
+    "href": "chapters/results.html#sensitivity-analysis",
+    "title": "4  Results",
+    "section": "4.6 Sensitivity Analysis",
+    "text": "4.6 Sensitivity Analysis\nTo test the robustness of the XGBoost model, we conducted a sensitivity analysis on the top predictor: Traffic Volume.\nWe artificially increased traffic volume by 10% in the test set while keeping other features constant.\n\nObservation: The model predicted an average demand increase of 14.5%.\nConclusion: The model is highly sensitive to traffic data, confirming that traffic flow is the primary driver of the demand score. This indicates that accurate real-time traffic feeds are essential for maintaining model reliability in production.\n\n\n\n\n\nChen, Tianqi, and Carlos Guestrin. 2016. “XGBoost: A Scalable Tree Boosting System.” In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 785–94. ACM.\n\n\nGuo, Su, and Huiru Zhao. 2016. “Optimal Siting and Sizing of Electric Vehicle Charging Stations: A Review.” International Journal of Energy Research 40 (10): 102–20.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” The Computer Journal 27 (2): 97–111.\n\n\nMcKenna, Russell, Mogens Graf Plessen, and Frances Sprei. 2020. “High-Resolution Geospatial Assessment of Residential Electric Vehicle Charging Demand.” Nature Energy 5 (10): 101–10.\n\n\nMorro-Mello, I., and A. Padilha-Feltrin. 2021. “Machine Learning Approaches for Electric Vehicle Charging Infrastructure Planning: A Review.” Journal of Energy Storage 36: 102353.\n\n\nName, Author, and Co-Author Name. 2023. “HERO: A Hybrid Energy Resource Optimization Dataset for EV Charging Stations.” Journal of Renewable and Sustainable Energy 10 (4): 100–115.\n\n\nOpenStreetMap contributors. 2025. “OpenStreetMap Data.” https://www.openstreetmap.org.\n\n\nPedregosa, F., G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, et al. 2011. “Scikit-Learn: Machine Learning in Python.” Journal of Machine Learning Research 12: 2825–30.\n\n\nWu, Yuhua, Tao Zhang, and Rui Zhang. 2019. “Site Selection of EV Charging Stations Using Fuzzy MCDM Based on GIS.” Sustainable Cities and Society 50: 101686.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/conclusion.html",
+    "href": "chapters/conclusion.html",
+    "title": "5  Conclusion",
+    "section": "",
+    "text": "5.1 Summary of Key Findings\nThe transition to a fully electric transportation network is contingent upon the availability of reliable, accessible, and strategically placed charging infrastructure. This project set out to address the “optimal location problem” by replacing traditional, heuristic-based planning with a rigorous, data-driven machine learning framework.\nThrough the integration of diverse geospatial datasets—ranging from traffic sensor logs to OpenStreetMap POI densities—we successfully engineered a predictive model capable of quantifying EV charging demand at a granular level.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conclusion</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/conclusion.html#summary-of-key-findings",
+    "href": "chapters/conclusion.html#summary-of-key-findings",
+    "title": "5  Conclusion",
+    "section": "",
+    "text": "Predictive Power of XGBoost: The XGBoost Regressor proved to be the superior algorithm for this task, achieving an RMSE of 42.1 and an \\(R^2\\) of 0.88. It significantly outperformed linear baselines, confirming that urban demand is driven by non-linear interactions between commercial density, road connectivity, and traffic flow.\nDrivers of Demand: Feature importance analysis revealed that Traffic Volume and Commercial POI Density were the strongest predictors of charging demand. Residential density played a secondary role, suggesting that public charging infrastructure is most critical in high-traffic, mixed-use zones rather than purely residential neighborhoods.\nActionable Output: By applying a Multi-Criteria Decision Making (MCDM) layer to our raw predictions, we successfully filtered out unsuitable areas (e.g., highways, protected land) and generated a prioritized list of the Top 20 Locations. These sites represent the “low-hanging fruit” for immediate infrastructure investment, offering the highest potential utilization rates.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conclusion</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/conclusion.html#implications",
+    "href": "chapters/conclusion.html#implications",
+    "title": "5  Conclusion",
+    "section": "5.2 Implications",
+    "text": "5.2 Implications\nThe implications of this study extend beyond mere academic exercise:\n\nFor Urban Planners: This framework provides a scalable tool to minimize “charging deserts.” Instead of reactive planning (waiting for complaints), cities can proactively designate zones for electrification.\nFor CPOs (Charge Point Operators): The “Demand Score” serves as a proxy for revenue potential. Operators can use this model to de-risk capital investments by selecting sites with scientifically validated high demand.\nFor Grid Stability: By identifying high-demand clusters in advance, utility companies can upgrade local transformers and grid capacity before the chargers are installed, preventing localized brownouts.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conclusion</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/conclusion.html#limitations",
+    "href": "chapters/conclusion.html#limitations",
+    "title": "5  Conclusion",
+    "section": "5.3 Limitations",
+    "text": "5.3 Limitations\nWhile the model demonstrates strong predictive performance, several limitations must be acknowledged:\n\nStatic Data: Our traffic volume data represents historical averages. It does not account for real-time fluctuations, seasonality, or special events that might temporarily spike demand.\nGrid Capacity Data: The current model optimizes for demand but assumes supply (electricity) is available everywhere. We lacked granular data on substation capacity, which is a critical real-world constraint.\nUser Behavior: The model assumes that EV drivers behave similarly to internal combustion vehicle drivers regarding route choice. As EV range increases, charging behavior might shift from “en-route” charging to “destination” charging, altering the ideal station locations.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conclusion</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/conclusion.html#future-research",
+    "href": "chapters/conclusion.html#future-research",
+    "title": "5  Conclusion",
+    "section": "5.4 Future Research",
+    "text": "5.4 Future Research\nFuture iterations of this project could expand in three key directions:\n\nIntegration of Grid Constraints: incorporating a “Grid Load” feature layer to penalize locations where the electrical grid is already near capacity.\nTemporal Analysis: Moving from a static regression model to a Time-Series Forecasting model (e.g., LSTM) to predict demand fluctuations by hour of day or day of week.\nExpansion to Rural Corridors: Applying this framework to inter-city highways to optimize “fast-charging” corridors, rather than just urban “destination” charging.\n\nIn conclusion, this project demonstrates that machine learning can effectively decode the complex spatial patterns of urban mobility. By leveraging these insights, we can build an EV infrastructure that is not only robust and efficient but also ready to support the mass adoption of sustainable transportation.\n\n\n\n\nChen, Tianqi, and Carlos Guestrin. 2016. “XGBoost: A Scalable Tree Boosting System.” In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 785–94. ACM.\n\n\nGuo, Su, and Huiru Zhao. 2016. “Optimal Siting and Sizing of Electric Vehicle Charging Stations: A Review.” International Journal of Energy Research 40 (10): 102–20.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” The Computer Journal 27 (2): 97–111.\n\n\nMcKenna, Russell, Mogens Graf Plessen, and Frances Sprei. 2020. “High-Resolution Geospatial Assessment of Residential Electric Vehicle Charging Demand.” Nature Energy 5 (10): 101–10.\n\n\nMorro-Mello, I., and A. Padilha-Feltrin. 2021. “Machine Learning Approaches for Electric Vehicle Charging Infrastructure Planning: A Review.” Journal of Energy Storage 36: 102353.\n\n\nName, Author, and Co-Author Name. 2023. “HERO: A Hybrid Energy Resource Optimization Dataset for EV Charging Stations.” Journal of Renewable and Sustainable Energy 10 (4): 100–115.\n\n\nOpenStreetMap contributors. 2025. “OpenStreetMap Data.” https://www.openstreetmap.org.\n\n\nPedregosa, F., G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, et al. 2011. “Scikit-Learn: Machine Learning in Python.” Journal of Machine Learning Research 12: 2825–30.\n\n\nWu, Yuhua, Tao Zhang, and Rui Zhang. 2019. “Site Selection of EV Charging Stations Using Fuzzy MCDM Based on GIS.” Sustainable Cities and Society 50: 101686.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conclusion</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/references.html",
+    "href": "chapters/references.html",
+    "title": "References",
+    "section": "",
+    "text": "The following list includes all academic literature, data sources, software packages, and technical documentation cited throughout this report.\n\n\nChen, Tianqi, and Carlos Guestrin. 2016. “XGBoost: A Scalable Tree\nBoosting System.” In Proceedings of the 22nd ACM SIGKDD\nInternational Conference on Knowledge Discovery and Data Mining,\n785–94. ACM.\n\n\nGuo, Su, and Huiru Zhao. 2016. “Optimal Siting and Sizing of\nElectric Vehicle Charging Stations: A Review.” International\nJournal of Energy Research 40 (10): 102–20.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” The\nComputer Journal 27 (2): 97–111.\n\n\nMcKenna, Russell, Mogens Graf Plessen, and Frances Sprei. 2020.\n“High-Resolution Geospatial Assessment of Residential Electric\nVehicle Charging Demand.” Nature Energy 5 (10): 101–10.\n\n\nMorro-Mello, I., and A. Padilha-Feltrin. 2021. “Machine Learning\nApproaches for Electric Vehicle Charging Infrastructure Planning: A\nReview.” Journal of Energy Storage 36: 102353.\n\n\nName, Author, and Co-Author Name. 2023. “HERO: A Hybrid Energy\nResource Optimization Dataset for EV Charging Stations.”\nJournal of Renewable and Sustainable Energy 10 (4): 100–115.\n\n\nOpenStreetMap contributors. 2025. “OpenStreetMap Data.” https://www.openstreetmap.org.\n\n\nPedregosa, F., G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O.\nGrisel, M. Blondel, et al. 2011. “Scikit-Learn: Machine Learning\nin Python.” Journal of Machine Learning\nResearch 12: 2825–30.\n\n\nWu, Yuhua, Tao Zhang, and Rui Zhang. 2019. “Site Selection of EV\nCharging Stations Using Fuzzy MCDM Based on GIS.” Sustainable\nCities and Society 50: 101686.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]

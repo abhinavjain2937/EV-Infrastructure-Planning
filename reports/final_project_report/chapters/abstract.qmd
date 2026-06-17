@@ -1,0 +1,9 @@
+# Abstract {.unnumbered}
+
+The rapid electrification of the transportation sector is a critical component of global sustainability goals; however, "range anxiety" and the lack of accessible charging infrastructure remain significant barriers to widespread Electric Vehicle (EV) adoption. Strategic placement of charging stations is essential to maximize utilization and ensure economic viability, yet traditional planning methods often lack granular, data-driven insights.
+
+This project presents a comprehensive machine learning framework for identifying optimal EV charging station locations. By leveraging diverse geospatial datasets—including traffic volume, population density, Points of Interest (POI) distribution, and road network connectivity—we engineered a robust feature set to model localized charging demand. 
+
+We employed an **XGBoost Regressor** to predict a continuous demand score for high-resolution grid cells, moving beyond simple classification to quantify the intensity of potential usage. To ensure practical applicability, the raw model predictions were integrated into a Multi-Criteria Decision Making (MCDM) system. This secondary layer weighted the predicted demand against suitability factors such as land availability and urban centrality. 
+
+The study successfully identified and ranked the **top 300 high-priority locations**, primarily clustered in commercial and mixed-use zones with high traffic throughput. The resulting framework provides urban planners and stakeholders with a scalable, evidence-based tool for optimizing infrastructure investment and accelerating the transition to electric mobility.

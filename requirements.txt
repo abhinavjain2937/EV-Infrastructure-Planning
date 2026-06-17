@@ -1,0 +1,29 @@
+# Core Data Science
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+
+# Machine Learning
+scikit-learn>=1.2.0
+xgboost>=1.7.0
+joblib>=1.2.0  # For saving/loading models
+
+# Geospatial Analysis
+geopandas>=0.13.0
+shapely>=2.0.0
+folium>=0.14.0  # For interactive maps
+osmnx>=1.3.0    # If you downloaded OSM data via Python
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.14.0
+
+# Reporting & Jupyter
+jupyter>=1.0.0
+ipykernel>=6.0.0
+quarto>=0.1.0  # Optional python wrapper, though usually installed via CLI
+
+# Utilities
+tqdm>=4.65.0   # For progress bars
+python-dotenv>=1.0.0

@@ -1,0 +1,11 @@
+# Welcome {.unnumbered}
+
+This is the comprehensive project report for **"Data-Driven Optimization for EV Charging Infrastructure,"** submitted in partial fulfillment of the requirements for Sabudh Major Passion-Project.
+
+Use the navigation bar on the left to explore the chapters of this report.
+
+## Project Summary
+
+* **Goal:** To identify optimal locations for EV charging stations using machine learning.
+* **Method:** XGBoost Regression combined with Multi-Criteria Decision Making (MCDM).
+* **Outcome:** A prioritized map of the top 300 locations for immediate infrastructure investment.

@@ -1,0 +1,18 @@
+div#refs {
+    padding-left: 20px;
+    font-family: "Georgia", serif; /* Optional: Makes it look more academic */
+}
+
+div.csl-entry {
+    margin-bottom: 1.2em;      /* More space between entries */
+    margin-left: 2em;          /* Indent the whole block */
+    text-indent: -2em;         /* Pull the first line back (Hanging Indent) */
+    line-height: 1.6;          /* Better readability */
+    font-size: 0.95rem;        /* Slightly smaller standard ref size */
+    color: #333;               /* Dark grey for readability */
+}
+
+div.csl-entry a {
+    text-decoration: none;
+    color: #0056b3;
+}

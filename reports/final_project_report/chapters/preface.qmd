@@ -1,0 +1,48 @@
+# Preface {.unnumbered}
+
+The transition to sustainable energy is one of the defining challenges of our time. Among the various strategies to combat climate change, the electrification of the transportation sector stands out as a critical imperative. However, the success of this transition depends not just on the vehicles themselves, but on the infrastructure that supports them.
+
+This project, **"Data-Driven Optimization for EV Charging Infrastructure,"** was born out of a desire to bridge the gap between urban planning and machine learning. While traditional infrastructure planning often relies on static heuristics, we believe that the complex, dynamic nature of modern cities requires a more sophisticated, algorithmic approach.
+
+## About This Report
+
+This report documents the end-to-end development of a predictive framework designed to identify optimal locations for Electric Vehicle (EV) charging stations. It serves as a comprehensive record of our methodology, challenges, and findings.
+
+The document is structured to guide the reader through the full data science lifecycle:
+
+1.  **The Problem:** Understanding the "range anxiety" barrier and the need for strategic placement.
+2.  **The Data:** How we aggregated disparate geospatial datasets (traffic, demographics, POIs).
+3.  **The Solution:** The technical implementation of our **XGBoost Regressor** and **MCDM** (Multi-Criteria Decision Making) pipeline.
+4.  **The Results:** Visualizing the top priority locations that offer the highest utility.
+
+## Intended Audience
+
+This report is written for a diverse audience interested in the application of AI to real-world problems:
+
+* **Urban Planners & Policymakers:** To understand how data science can inform smarter infrastructure investments.
+* **Data Scientists & Engineers:** To explore the technical implementation of geospatial feature engineering and gradient boosting models.
+* **Sustainability Researchers:** To analyze the factors that drive demand for electric mobility.
+
+## Software and Tools
+
+The analysis presented here was conducted entirely using the **Python** programming language. 
+Key libraries utilized include:
+
+* **Pandas & NumPy** for data manipulation.
+* **XGBoost** for predictive modeling.
+* **Scikit-Learn** for model evaluation and preprocessing.
+* **Matplotlib & Seaborn** for statistical visualization.
+
+This report itself was generated using **Quarto**, ensuring that the code, visualizations, and narrative remain reproducible and tightly integrated.
+
+## Acknowledgments
+
+This project would not have been possible without the guidance and support of our mentors and the open-source community.
+
+* We extend our gratitude to our mentors for their invaluable feedback on the project scope and methodology.
+* We thank the contributors to OpenStreetMap (OSM) and other open data initiatives, whose work democratizes access to vital geospatial information.
+* Finally, we acknowledge the collective effort of the project team in tackling the complex challenges of data cleaning and model optimization.
+
+---
+
+*This document represents the culmination of our work as of December 2025.*

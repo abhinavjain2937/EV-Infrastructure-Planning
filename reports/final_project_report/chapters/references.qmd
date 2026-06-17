@@ -1,0 +1,6 @@
+# References {.unnumbered}
+
+The following list includes all academic literature, data sources, software packages, and technical documentation cited throughout this report.
+
+::: {#refs}
+:::
